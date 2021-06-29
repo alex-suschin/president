@@ -40,3 +40,4 @@ $(window).on('load resize', function() {
     }
 
 });
+//# sourceMappingURL=../sourcemaps/main.js.map
