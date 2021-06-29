@@ -29,6 +29,28 @@ $(function() {
         variableWidth: true
     });
 
+    $('.rewiews-slider-big').slick({
+        infinite: true,
+        arrows: true,
+        slidesToShow: 1,
+        swipeToSlide: true,
+        slidesToScroll: 1,
+        variableWidth: true,
+        asNavFor: '.rewiews-slider-thumbs'
+    });
+
+    $('.rewiews-slider-thumbs').slick({
+        infinite: true,
+        arrows: false,
+        slidesToShow: 3,
+        swipeToSlide: true,
+        focusOnSelect: true,
+        centerMode: true,
+        slidesToScroll: 1,
+        variableWidth: true,
+        asNavFor: '.rewiews-slider-big'
+    });
+
 });
 
 $(window).on('load resize', function() {
