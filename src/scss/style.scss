@@ -83,24 +83,29 @@ ul {
 
 ul li {
     position: relative;
-    padding: 0 0 0 0;
+    padding: 0 0 0 19px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 180%;
+    color: #474747;
+    margin-bottom: 1.5px;
 }
 
-// ul li::before {
-//     content: '';
-//     display: block;
-//     width: 10px;
-//     height: 10px;
-//     position: absolute;
-//     top: 5px;
-//     left: 0;
-//     background: #000;
-//     border-radius: 50%;
-//     -webkit-border-radius: 50%;
-//     -moz-border-radius: 50%;
-//     -ms-border-radius: 50%;
-//     -o-border-radius: 50%;
-// }
+ul li::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    top: 11px;
+    left: 0;
+    background: #474747;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
 button {
     border: none;
     outline: none;
@@ -497,6 +502,7 @@ header {
     width: 68%;
 }
 .works {
+    margin-bottom: 156px;
     .title {
         max-width: 1174px;
         width: 100%;
@@ -623,6 +629,177 @@ header {
     color: #868C94;
     margin-bottom: 31px;
 
+}
+.doctor-info {
+    padding: 0 0 0 284px;
+    margin-bottom: 31px;
+    .title {
+        font-weight: 600;
+        text-align: left;
+        font-size: 34px;
+        line-height: 41px;
+        color: #444444;
+        margin-bottom: 48px;
+    }
+    p {
+        max-width: 1136px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 160%;
+        color: #868C94;
+        margin-bottom: 32px;
+    }
+}
+.doctor-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 38px;
+}
+.doctor-img {
+    margin-right: 106px;
+    position: relative;
+    height: 0;
+    width: 202px;
+    height: 202px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 0 5px #F7FAFC;
+    img {
+        @include imgCenter;
+    }
+}
+.doctor-content {
+    max-width: 337px;
+    width: 100%;
+    padding: 16px 0 0 0;
+    position: relative;
+    &::before {
+        content: '';
+        display: block;
+        width: 2px;
+        height: 178px;
+        background: #FCF1EF;
+        position: absolute;
+        left: -61px;
+        top: 12px;
+    }
+    a {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        display: flex;
+        align-items: center;
+        color: #20B63B;
+        padding: 10px 0 10px 41px;
+        background: url(../img/pdf.svg) no-repeat left center;
+    }
+}
+.doctor-name {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 130%;
+    color: #444444;
+    margin-bottom: 15px;
+}
+.doctor-desc {
+    font-weight: normal;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 160%;
+    color: #868C94;
+    margin-bottom: 16px;
+}
+.doctor-service {
+    max-width: 1136px;
+    background: #F7FAFC;
+    border-radius: 18px;
+    padding: 31px 35px 30px 24px;
+}
+.sertificate {
+    margin-bottom: 126px;
+    .title {
+        padding-left: 384px;
+        font-weight: 600;
+        font-size: 34px;
+        line-height: 41px;
+        color: #444444;
+        margin-bottom: 36px;
+    }
+    .btn-green {
+        max-width: 320px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+.sertificate-slider {
+    margin-bottom: 44px;
+}
+.sertificate-slider__item {
+    margin: 0 2.5px;
+    height: 341px;
+}
+.table-wrap {
+    .title {
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 60px;
+        text-align: center;
+        color: #444444;
+        margin-bottom: 44px;
+    }
+}
+.table {
+    max-width: 1136px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #F2F2F2;
+}
+.table-line {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    &>div:first-child {
+        padding-right: 22px;
+    }
+    div:first-child,
+    b:first-child  {
+        width: 61.3%;
+        
+    }
+    div:nth-child(2),
+    b:nth-child(2) {
+        width: 26.6%;
+    }
+    div:last-child,
+    b:last-child {
+        width: 10%;
+    }
+    border-radius: 15px;
+    padding: 19.5px 0;
+    padding-left: 22px;
+    &:nth-child(even) {
+        background: #F7FAFC;
+    }
+    
+    b {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 100%;
+        text-transform: uppercase;
+        color: #000000;
+    }
+    span {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        color: #868C94;
+    }
 }
 
 

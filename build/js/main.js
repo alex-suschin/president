@@ -18,8 +18,16 @@ $(function() {
         slidesToShow: 1,
         slidesToScroll: 1,
         variableWidth: true
-      });
+    });
 
+    $('.sertificate-slider').slick({
+        infinite: true,
+        arrows: false,
+        slidesToShow: 1,
+        swipeToSlide: true,
+        slidesToScroll: 1,
+        variableWidth: true
+    });
 
 });
 
