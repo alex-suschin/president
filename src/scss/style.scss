@@ -987,8 +987,55 @@ header {
     }
 }
 .map-wrap {
+    position: relative;
     height: 729px;
     background: #ccc;
+}
+.map-contacts {
+    max-width: 391px;
+    width: 100%;
+    display: block;
+    position: relative;
+    top: 242px;
+    left: 0px;
+    box-sizing: border-box;
+    z-index: 3;
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 39px 40px 44px 40px;
+    .title {
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 100%;
+        color: #444444;
+        margin-bottom: 30px;
+    }
+}
+.map-contacts__item {
+    padding: 0 0 0 39px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    color: #444444;
+    margin-bottom: 27px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    a {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 100%;
+        color: #444444;
+    }
+}
+.map-address {
+    background: url(../img/gps.svg) no-repeat left center;
+}
+.map-tel {
+    background: url(../img/phone.svg) no-repeat left center;
+}
+.map-worktime {
+    background: url(../img/clock.svg) no-repeat left center;
 }
 footer {
     padding: 45px 0 48px 0;
