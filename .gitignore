@@ -5,6 +5,7 @@
 
 .vscode/
 node_modules/
+bower_components/
 package.lock.json
 yarn.lock
 package-lock.json

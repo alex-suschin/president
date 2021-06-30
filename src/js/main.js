@@ -1,23 +1,17 @@
 $(function() {
-    $("a.scrollto").click(function() {
-        elementClick = $(this).attr("href")
-        destination = $(elementClick).offset().top;
-        $("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination }, 700);
-        return false;
-    });
-
-    $('.style-tab').click(function() {
-        $('.style-tabs').find('.active').removeClass('active');
-        $(this).addClass('active');
-        $('.styles-elems').find('.styles-elem-item').hide();
-        $('#' + $(this).data('switch')).show();
-    });
-
     $('.slider-works').slick({
         infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
-        variableWidth: true
+        variableWidth: true,
+        responsive: [
+            {
+              breakpoint: 1331,
+              settings: {
+                variableWidth: false
+              }
+            }
+        ]
     });
 
     $('.sertificate-slider').slick({
@@ -26,7 +20,16 @@ $(function() {
         slidesToShow: 1,
         swipeToSlide: true,
         slidesToScroll: 1,
-        variableWidth: true
+        variableWidth: true,
+        responsive: [
+            {
+              breakpoint: 1331,
+              settings: {
+                variableWidth: true,
+                centerMode: true
+              }
+            }
+        ]
     });
 
     $('.rewiews-slider-big').slick({
@@ -51,18 +54,45 @@ $(function() {
         asNavFor: '.rewiews-slider-big'
     });
 
+    $('.btn-popup').click(function(e) {
+        var valPopup = $(this).data('popup');
+        e.preventDefault();
+        $('body').find('#' + valPopup).addClass('popup-active');
+        $('body').find('#' + valPopup).children('.popup').addClass('popup-active');
+    });
+
+    $('.btn-close').click(function(e) {
+        e.preventDefault();
+        $(this).closest('.popup-wrap').removeClass('popup-active');
+        $(this).closest('.popup-wrap').children('.popup').removeClass('popup-active');
+        $('.form-popup__item input').removeClass('active');
+    });
+
+    $('.form-popup__item input').focus(function name() {
+       $(this).addClass('active');
+    });
+
+    $(function($){
+        $(document).mousedown(function (e){ 
+            var div = $(".popup"); 
+            if (!div.is(e.target) 
+                && div.has(e.target).length === 0) { 
+                div.removeClass('popup-active');
+                div.closest('.popup-wrap').removeClass('popup-active');
+                $('.form-popup__item input').removeClass('active');
+            }
+        });
+    });
+
 });
 
 $(window).on('load resize', function() {
 
     var width = $(window).width();
-
-    if ((width > '700') && (width < '1000')) {
-
-    }
-
-    if (width > '700') {
-
+    if (width > '1199') {
+        $('.steps-box .btn-green').insertAfter($('.step-img-box'));
+    } else {
+        $('.steps-box .btn-green').insertAfter($('.steps-items'));
     }
 
     if (width < '700') {
