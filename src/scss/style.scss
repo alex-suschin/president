@@ -1188,7 +1188,8 @@ footer {
         margin-bottom: 0;
     }
 }
-.form-popup__item input.active+span {
+.form-popup__item input.active+span,
+.form-popup__item input:hover+span {
     top: 0;
     font-size: 12px;
 }
@@ -1274,6 +1275,112 @@ footer {
         width: 100%;
         margin: 0 auto;
     }
+}
+.map {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.ballon-box {
+    position: relative;
+    max-width: 202px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 15px 25px 14px 38px;
+    &::before {
+        content: '';
+        display: block;
+        width: 12px;
+        height: 12px;
+        box-sizing: border-box;
+        position: absolute;
+        background: #FFFFFF;
+        border: 3px solid #20B63B;
+        bottom: -5px;
+        left: -4px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+    &::after {
+        content: '';
+        display: block;
+        width: 52px;
+        height: 59px;
+        box-sizing: border-box;
+        position: absolute;
+        background: url(../img/map-logo.svg) no-repeat center;
+        top: 16px;
+        left: -26px;
+        
+    }
+}
+.ballon-box__top {
+    padding-bottom: 15px;
+    margin-bottom: 14px;
+    border-bottom: 0.4px solid #ECECEC;
+    span {
+        display: block;
+        position: relative;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 100%;
+        color: #444444;
+        padding: 0 0 0 22px;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 3px;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            background: #FFFFFF;
+            border: 2px solid #EF1E25;
+            box-sizing: border-box;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+        }
+    }
+}
+
+.ballon-box__bottom {
+    span {
+        display: block;
+        position: relative;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 100%;
+        color: #868C94;
+        padding: 0 0 0 8px;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -2px;
+            left: -4px;
+            width: 18px;
+            height: 18px;
+            background: url(../img/parking-ico.svg) no-repeat center;
+        }
+    }
+}
+[class*="ymaps-2"][class*="-ground-pane"] {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    /* Firefox 3.5+ */
+    -webkit-filter: grayscale(100%);
+    /* Chrome 19+ & Safari 6+ */
 }
 
 
@@ -1691,6 +1798,20 @@ footer {
     .exs-item__title::after {
         bottom: -16px;
     }
+    .map-contacts {
+        max-width: 100%;
+        top: -180px;
+        padding: 22px 15px 22px 10px;
+        box-shadow: 0px 18px 25px rgba(212, 215, 217, 0.52);
+        border-radius: 8px;
+    }
+    .ballon-box {
+        max-width: 202px;
+        width: 100%;
+    }
+    .exs {
+        padding-bottom: 50px;
+    }
 }
 
 @media screen and (max-width: 880px) {
@@ -1923,6 +2044,13 @@ footer {
     .table-wrap .title {
         font-size: 26px;
     }
+    .popup {
+        width: 90%;
+        padding: 38px 16px 37px 16px;
+    }
+    .agree {
+        padding: 0 0 0 30px;
+    }
 }
 
 @media screen and (max-width: 599px) {
@@ -1988,13 +2116,7 @@ footer {
     .map-wrap {
         height: 320px;
     }
-    .map-contacts {
-        max-width: 100%;
-        top: -180px;
-        padding: 22px 15px 22px 10px;
-        box-shadow: 0px 18px 25px rgba(212, 215, 217, 0.52);
-border-radius: 8px;
-    }
+    
     .table-line div:first-child, .table-line b:first-child {
         width: 100%;
     }
@@ -2026,6 +2148,10 @@ border-radius: 8px;
     footer .btn-green {
         max-width: 90%;
     }
-   
-   
+   .table-last div:last-child {
+       padding-right: 16px;
+   }
+   .table-last  .table-line span {
+        font-size: 14px;
+    }
 }

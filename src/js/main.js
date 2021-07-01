@@ -1,4 +1,21 @@
 $(function() {
+    $(window).on('load', function() {
+        let phones = [
+            { 'mask': '+7 \\ \\ ###-###-##-##' }
+        ];
+
+        $('input[type=tel]').inputmask({
+            mask: phones,
+            greedy: false,
+            definitions: {
+                '#': {
+                    validator: '[0-9]',
+                    cardinality: 1
+                }
+            }
+        });
+    });
+
     $('.slider-works').slick({
         infinite: false,
         slidesToShow: 1,
@@ -93,6 +110,12 @@ $(function() {
        $(this).addClass('active');
     });
 
+    $('#popup-wrap-thanks .btn-green').click(function(e) {
+        e.preventDefault();
+        $(this).closest('.popup-wrap').removeClass('popup-active');
+        $(this).closest('.popup-wrap').children('.popup').removeClass('popup-active');
+    });
+
     $(function($){
         $(document).mousedown(function (e){ 
             var div = $(".popup"); 
@@ -105,7 +128,46 @@ $(function() {
         });
     });
 
+    ymaps.ready(function () {
+        if ($(window).width() > 899) {
+            centerMap = [55.719733, 37.573636];
+        } else {
+            centerMap = [55.717192, 37.586281];
+        }
+        var myMap = new ymaps.Map('map', {
+                center: centerMap,
+                zoom: 15,
+                scrollZoom: false,
+                controls: ['zoomControl']
+            }, {
+                searchControlProvider: 'yandex#search'
+            }),
+    
+            myPlacemark = new ymaps.Placemark([55.719652, 37.582251], {
+                balloonContent: '<div class="ballon-box"><div class="ballon-box__top"><span>Фрунзенская</span></div><div class="ballon-box__bottom"><span>есть парковка</span></div></div>'
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: './img/gps-map.svg',
+                iconImageSize: [12, 12],
+                balloonContentSize: [202, 91],
+                balloonLayout: "default#imageWithContent",
+                balloonImageOffset: [5, -85],
+                cursor: 'pointer',
+                iconImageOffset: [0, 0],
+                balloonclose: false
+            });
+            myMap.behaviors.disable('scrollZoom');
+            myMap.geoObjects
+            .add(myPlacemark)
+            myMap.options.set({balloonPanelMaxMapArea:'0'});
+            myPlacemark.balloon.open();
+    
+        });
+
 });
+
+
+
 
 $(window).on('load resize', function() {
 
